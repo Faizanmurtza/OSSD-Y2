@@ -20,11 +20,15 @@ def calculate():
 # Window Frame Root
 root = tk.Tk()
 root.title("Advanced Calculator")
-root.geometry("320x380")
+root.geometry("320x420")
 root.resizable(0, 0)
 root.configure(bg="#95adea")
-root.iconphoto(False, tk.PhotoImage(file="im.png"))
-
+'''
+icon = tk.PhotoImage(file="im.png")
+root.iconphoto(True, icon)
+''' 
+root.icon_image= tk.PhotoImage(file=r"C:\Users\Ayt\Pictures\My_picture.png")
+root.iconphoto(True,root.icon_image)
 
 # Display Entry
 entry = tk.Entry(root, font=("Arial", 20), bd=10, relief=tk.RIDGE, justify="right")
@@ -47,6 +51,6 @@ for (text, row, col) in buttons:
         action = lambda x=text: press(x)
 
     tk.Button(root, text=text, width=5, height=2, font=("Arial", 14),
-              command=action).grid(row=row, column=col, padx=5, pady=5)
+              command=action).grid(row=row, column=col, padx=3, pady=5)
 
 root.mainloop()
